@@ -4,7 +4,7 @@ This project analyzes sales data to monitor key performance indicators (KPIs), i
 
 ## 🚀 Project Overview
 
-This repository contains the files and assets related to a comprehensive Sales Analysis project developed using **Microsoft Power BI**. The core objective was to transform raw transaction data into a dynamic, interactive dashboard that measures performance against the previous year (PY) and highlights high-impact areas for decision-making.
+This repository contains the Power BI file (`[Your Project Name].pbix`) and assets related to a comprehensive Sales Analysis project. The core objective was to transform raw transaction data into a dynamic, interactive dashboard that measures performance against the previous year (PY) and highlights high-impact areas for decision-making.
 
 The project was inspired by the work of **Freedom Oboh**.
 
@@ -24,42 +24,34 @@ The analysis uncovered several crucial points for the business:
 * **Primary Tool:** Microsoft Power BI Desktop
 * **Data Modeling:** Star Schema Design
 * **Calculations:** Data Analysis Expressions (DAX) for Year-over-Year (YoY) comparisons, aggregation, and custom measures.
-* **Visualization:** Various charts including line charts for trends, donut charts for customer insight, and a Map visual for geographical distribution.
 
 ## ⚙️ Data Model (Star Schema)
 
 The dashboard is built on a robust Star Schema model for optimal query performance and measure accuracy.
 
-* **Fact Table:** `fact_table` (contains `item_key`, `store_key`, `time_key`, `coustomer_key`, and transaction details).
-* **Dimension Tables:**
-    * `customer_dim`
-    * `item_dim`
-    * `store_dim`
-    * `time_dim`
-    * `Trans_dim` (Payment/Transaction details)
+* **Fact Table:** `fact_table`
+* **Dimension Tables:** `customer_dim`, `item_dim`, `store_dim`, `time_dim`, `Trans_dim`
 
+**Data Model Diagram:**
+![Project Data Model](relationship.JPG) 
 
 ## 📊 Dashboard Visuals
 
-The dashboard provides a single, cohesive view of the business performance:
+The dashboard provides a single, cohesive view of the business performance across key areas:
 
-### 1. Performance Metrics
-* Revenue, Quantity, and Avg Unit Price with YoY comparison.
-* Monthly Sales Trend to identify seasonality and performance fluctuations.
-
-### 2. Customer and Product Deep Dive
+### Highlights:
+* **Performance Metrics:** Revenue, Quantity, and Avg Unit Price with YoY comparison.
 * **Customer Insight:** Top 5 Spenders analysis to highlight revenue concentration.
-* **Top 5 Units by Quantity Sold:** Bar chart identifying the highest-volume products (e.g., Cans, Bottles).
+* **Geographical Analysis:** Sales distribution by country, showing top contributors (e.g., Bangladesh, India).
 
-### 3. Geographical Analysis
-* Map visual showing sales distribution by country, reinforced by a Top 5 countries bar chart (e.g., Bangladesh, India, Lithuania).
-
+**Main Dashboard View:**
+![Sales Analysis Dashboard View](DASHB.JPG)
 
 ## 📈 Key DAX Measures Used
 
-* **Revenue:** `SUMX(fact_table, fact_table[Unit Price] * fact_table[Quantity])` (Example)
-* **Previous Year (PY) Measures:** Used `CALCULATE()` with `SAMEPERIODLASTYEAR()` to enable accurate YoY comparisons.
-* **YoY % Growth:** Used division of difference between current and PY Revenue by PY Revenue.
+* **Revenue:** Aggregation of `Unit Price * Quantity`.
+* **Previous Year (PY) Measures:** Used `CALCULATE()` with `SAMEPERIODLASTYEAR()`.
+* **YoY % Growth:** Calculated difference between current and PY Revenue, divided by PY Revenue.
 
 ---
-**Author:** EniolaNimi
+**Author:** EniOlaNimi
