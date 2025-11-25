@@ -62,4 +62,4 @@ The dashboard provides a single, cohesive view of the business performance:
 * **YoY % Growth:** Used division of difference between current and PY Revenue by PY Revenue.
 
 ---
-**Author:** [EniolaNimi] / [github.com/CodeBean002]
+**Author:** EniolaNimi
